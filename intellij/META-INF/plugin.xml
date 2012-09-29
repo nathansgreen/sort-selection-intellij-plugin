@@ -1,0 +1,36 @@
+<idea-plugin version="2">
+    <name>SortSelection</name>
+    <description>Sorts the editor selection [AZ or ZA]</description>
+    <version>1.0</version>
+    <vendor>N/A</vendor>
+
+    <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="107.105"/>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <group id="gr.intellij.plugin.SortGroup"
+               class="gr.intellij.plugin.SortGroup" text="Sort Selection" popup="true" icon="/icons/az.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="before" relative-to-action="AnalyzeMenu"/>
+            <action id="sortAZAction" class="gr.intellij.plugin.SortAzAction" text="Sort Ascending" description="Sort the Selected Text Ascending" icon="/icons/az.png">
+                <keyboard-shortcut first-keystroke="control alt COMMA" keymap="$default"/>
+            </action>
+
+            <action id="sortZAAction" class="gr.intellij.plugin.SortZaAction" text="Sort Descending" description="Sort the Selected Text Descending" icon="/icons/za.png">
+                <keyboard-shortcut first-keystroke="control alt PERIOD" keymap="$default"/>
+            </action>
+        </group>
+
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+</idea-plugin>
